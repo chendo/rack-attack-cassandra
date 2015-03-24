@@ -2,6 +2,8 @@
 
 An adapter that lets you use Rack::Attack with Cassandra.
 
+It operates by inserting `N` row with the specified TTL for every `increment` operation, and thus the value of the key is stored as the count. Counter columns were not used because they do not support TTLs.
+
 ## Installation
 
 Add this line to your application's Gemfile:
